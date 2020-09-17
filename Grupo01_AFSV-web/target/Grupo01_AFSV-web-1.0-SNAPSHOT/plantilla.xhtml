@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>TIENDA</title>
+                
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="230" resizable="true" closable="true" collapsible="true">
+                    
+                    
+                        
+       <img height="50" src="data:image/png;base64,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"></img>
+
+                <h2> PROYECTO FINAL DE APLICACIONES DISTRIBUIDAS</h2>
+                    
+                    <h3> Periodo: 2020-A </h3>
+                     
+                    <h4>Fecha: 24 de septiembre de 2020</h4>
+                   
+                     
+                </p:layoutUnit>
+                
+                
+
+                <p:layoutUnit position="south" size="80" closable="true" collapsible="true">
+                    <h4>Grupo 01: Andrés Alvear, Bryan Farinango, Wendy Soto, Erick Vargas</h4>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="150" header="Despliegue" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Tienda">
+                            <p:menuitem value="Inicio" url="plantilla.jsf" />
+                            <p:menuitem value="Empleado" url="empleado.jsf" />
+                            <p:menuitem value="Proveedor" url="proveedor.jsf" />
+                            <p:menuitem value="Cargo" url="cargo.jsf" />
+                            <p:menuitem value="Estado Civil" url="estadocivil.jsf" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                 <p:layoutUnit position="center">
+                     
+                    <ui:insert name="content">
+                        <h1> Aplicación J2EE </h1>
+                        <h3> Desarrollo de una aplicación empresarial J2EE, en base a la administración de una 
+                        tienda la cual permite su manejo de las entidades: </h3>
+                        <ul>
+                            <li>Cargo</li>
+                            <li>Estado Civil</li>
+                            <li>Empleado</li>
+                            <li>Proveedor</li>
+                        </ul>
+                        
+                        <h3>Esta aplicación ha sido subidad a la IaaS Digital Ocean para poder ser visualizada desde una dirección
+                        web en cualquier navegador web.</h3>
+
+                    </ui:insert>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+

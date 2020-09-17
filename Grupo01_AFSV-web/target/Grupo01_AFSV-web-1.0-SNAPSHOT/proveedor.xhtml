@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Mantenimiento de Proveedor</title>
+    </h:head>
+    <h:body>
+                <ui:composition template="plantilla.xhtml">
+            
+            <ui:define name="content">
+        
+        <h:form id="formprincipal">
+            
+            <p:panel header="#{proveedorManagedBean.proveedor.codigo ==null?'INGRESO DE PROVEEDOR':'ACTUALIZAR PROVEEDOR'}"
+                     rendered="#{proveedorManagedBean.proveedor!=null}">
+                
+                <div align="center">
+                    
+                    <h:panelGrid>
+                        
+                  
+                        
+                        <p:outputLabel value="NOMBRE:"></p:outputLabel>
+                        <p:inputText value="#{ proveedorManagedBean.proveedor.nombre}"></p:inputText>
+                        
+                        <p:outputLabel value="APELLIDO:"></p:outputLabel>
+                        <p:inputText value="#{proveedorManagedBean.proveedor.apellido}"></p:inputText>
+                        
+                        <p:outputLabel value="CEDULA:"></p:outputLabel>
+                        <p:inputText value="#{proveedorManagedBean.proveedor.cedula}"></p:inputText>
+                        
+                        <p:outputLabel value="FECHA DE NACIMIENTO:"></p:outputLabel>
+                        <p:calendar value="#{proveedorManagedBean.proveedor.fechaNacimiento}"></p:calendar>
+                                                                       
+                          
+                    </h:panelGrid>
+                    
+                </div>
+                
+                  <div align="center">
+                            <p:commandButton value="CANCELAR"
+                                             action="#{proveedorManagedBean.cancelar()}"
+                                             update="formprincipal">
+                            </p:commandButton>
+
+                            <p:commandButton value="GRABAR"
+                                             action="#{proveedorManagedBean.grabar()}"
+                                             update="formprincipal">
+                            </p:commandButton>
+                        </div>
+            
+            
+            </p:panel>
+            
+            <p:panel header="LISTADO DE PROVEEDORES" rendered="#{proveedorManagedBean.proveedor==null}">
+                                <div align="center">
+                            <p:commandButton value="INGRESAR"
+                                             action="#{proveedorManagedBean.nuevo()}"
+                                             update="formprincipal"
+                                             style="align-items: center">
+                            </p:commandButton>
+                        </div>
+                
+                 <br></br> 
+                
+                
+                <p:dataTable id="tablaproveedor" value="#{proveedorManagedBean.listaProveedor}" var="proveedor"
+                                     emptyMessage="NO EXISTEN REGISTROS">
+                            <p:column headerText="ID">
+                                <p:outputLabel value="#{proveedor.codigo}"></p:outputLabel>
+                            </p:column>
+                            <p:column headerText="NOMBRE">
+                                <p:outputLabel value="#{proveedor.nombre}"></p:outputLabel>
+                            </p:column>
+                    
+                   
+                            
+                            <p:column headerText="APELLIDO">
+                                <p:outputLabel value="#{proveedor.apellido}"></p:outputLabel>
+                            </p:column>
+                    
+                    <p:column headerText="CEDULA">
+                        <p:outputLabel value="#{proveedor.cedula}"></p:outputLabel>
+                            </p:column>
+                    
+                    <p:column headerText="FECHA">
+                        <p:outputLabel value="#{proveedor.fechaNacimiento}">
+                            <f:convertDateTime pattern="YYYY-MM-dd"></f:convertDateTime>
+                        </p:outputLabel>
+                            </p:column>
+
+                    
+                    
+                            <p:column headerText="EDITAR">
+                                <p:commandButton action="#{proveedorManagedBean.seleccionar(proveedor)}"
+                                                 update=":formprincipal"
+                                                 icon="ui-icon-check">
+                                </p:commandButton>
+                            </p:column>
+
+                            <p:column headerText="ELIMINAR">
+                                <p:commandButton action="#{proveedorManagedBean.eliminar(proveedor)}"
+                                                 update=":formprincipal"
+                                                 icon="ui-icon-trash">
+                                </p:commandButton>
+                            </p:column>
+
+                        </p:dataTable>
+                
+                        
+            </p:panel>
+                
+            
+        </h:form>
+                 </ui:define>
+        </ui:composition>
+        
+    </h:body>
+</html>
+

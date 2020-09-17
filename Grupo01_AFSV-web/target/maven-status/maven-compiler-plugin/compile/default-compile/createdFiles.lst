@@ -1,0 +1,8 @@
+com\tienda\managedbean\CargoManagedBean.class
+com\tienda\managedbean\EmpleadoInterfaces.class
+com\tienda\managedbean\EmpleadoManagedBean.class
+com\tienda\managedbean\EstadoCivilManagedBean.class
+com\tienda\managedbean\EstadoCivilInterfaces.class
+com\tienda\managedbean\ProveedorInterfaces.class
+com\tienda\managedbean\CargoManagedInterfaces.class
+com\tienda\managedbean\ProveedorManagedBean.class
